@@ -1,0 +1,227 @@
+{
+  "general": {
+    "title": "通用",
+    "filter": {
+      "title": "过滤器",
+      "description": {
+        "none": "无过滤器，显示所有按键",
+        "modifiers": "仅显示修饰键",
+        "custom": "自定义过滤器，允许 {{count}} 个按键"
+      },
+      "options": {
+        "none": "关闭",
+        "modifiers": "热键",
+        "custom": "自定义"
+      }
+    },
+    "history": {
+      "title": "历史记录",
+      "description": "保留之前按下的按键显示",
+      "direction": {
+        "title": "方向",
+        "row": "水平",
+        "column": "垂直"
+      },
+      "maxCount": "最大数量"
+    },
+    "toggleShortcut": {
+      "title": "切换快捷键",
+      "description": "全局快捷键用于显示/隐藏按键可视化，点击框内设置",
+      "placeholder": "点击设置快捷键",
+      "recording": "按下组合键，Esc 取消"
+    }
+  },
+  "appearance": {
+    "title": "外观",
+    "position": {
+      "title": "位置",
+      "display": {
+        "title": "显示器",
+        "description": "更改可视化的显示器",
+        "placeholder": "选择显示器"
+      },
+      "alignment": {
+        "title": "对齐方式",
+        "description": "按键可视化在屏幕上的位置"
+      },
+      "margin": {
+        "title": "边距",
+        "description": "距离屏幕边缘的距离"
+      }
+    },
+    "animation": {
+      "title": "动画",
+      "duration": {
+        "title": "持续时间",
+        "description": "按键在屏幕上停留的时间（秒）"
+      },
+      "type": {
+        "title": "动画",
+        "options": {
+          "none": "无",
+          "fade": "淡入淡出",
+          "zoom": "缩放",
+          "float": "上浮",
+          "slide": "滑入"
+        }
+      },
+      "speed": {
+        "title": "动画速度",
+        "description": "值越大，动画越慢"
+      }
+    }
+  },
+  "keycap": {
+    "title": "按键",
+    "preset": {
+      "title": "预设",
+      "styles": {
+        "minimal": "极简",
+        "laptop": "笔记本",
+        "lowprofile": "低矮",
+        "pbt": "PBT"
+      }
+    },
+    "sizePosition": {
+      "title": "大小与位置",
+      "scale": "缩放比例",
+      "scaleDescription": "按键大小缩放因子（0.5 ~ 2.0）",
+      "offsetX": "水平偏移",
+      "offsetY": "垂直偏移",
+      "offsetDescription": "距离默认位置的像素偏移（-200 ~ 200）",
+      "reset": "重置大小与位置"
+    },
+    "text": {
+      "title": "文本",
+      "size": "大小",
+      "variant": {
+        "title": "变体",
+        "placeholder": "文本变体",
+        "options": {
+          "text": "完整文本",
+          "text-short": "简短文本",
+          "icon": "仅图标"
+        }
+      },
+      "caps": "大小写",
+      "color": "文本颜色",
+      "modifierColor": "修饰键颜色"
+    },
+    "layout": {
+      "title": "布局",
+      "icon": "图标",
+      "alignment": "对齐",
+      "symbol": {
+        "title": "符号",
+        "description": "显示符号字符如 !, @, # 等"
+      },
+      "pressCount": {
+        "title": "按键次数",
+        "description": "显示按键按下的次数"
+      }
+    },
+    "color": {
+      "title": "颜色",
+      "highlightModifier": {
+        "title": "高亮修饰键",
+        "description": "为修饰键使用不同颜色"
+      },
+      "gradient": "渐变",
+      "normal": "普通",
+      "modifier": "修饰键",
+      "primary": "主色",
+      "secondary": "辅色"
+    },
+    "border": {
+      "title": "边框",
+      "enable": "启用",
+      "width": "宽度",
+      "color": "颜色",
+      "modifierColor": "修饰键颜色",
+      "radius": "圆角"
+    },
+    "background": {
+      "title": "背景",
+      "enable": "启用",
+      "color": "颜色"
+    },
+    "themes": {
+      "Silver": "银色",
+      "Stone": "石灰",
+      "Lime": "青柠",
+      "Cyber": "赛博",
+      "Turquoise": "青绿",
+      "Blue": "蓝色",
+      "Yellow": "黄色",
+      "Green": "绿色",
+      "Pink": "粉色",
+      "Red": "红色",
+      "Pansy": "三色堇",
+      "Eclipse": "日食",
+      "Bumblebee": "大黄蜂",
+      "Charcoal": "炭灰"
+    }
+  },
+  "mouse": {
+    "title": "鼠标",
+    "cursorHighlight": {
+      "title": "光标高亮"
+    },
+    "showClicks": {
+      "title": "显示点击",
+      "description": "鼠标按下时显示圆环动画"
+    },
+    "size": "大小",
+    "color": "颜色",
+    "alwaysHighlight": {
+      "title": "始终高亮",
+      "description": "永久显示光标周围的圆环"
+    },
+    "buttonIndicator": {
+      "title": "按钮指示器"
+    },
+    "showIndicator": {
+      "title": "显示指示器",
+      "description": "在光标旁边显示按钮和滚动图标"
+    },
+    "keepIndicator": {
+      "title": "保留指示器",
+      "description": "永久显示光标旁边的图标"
+    },
+    "offset": {
+      "title": "偏移",
+      "description": "光标到指示器的距离"
+    },
+    "event": {
+      "title": "事件"
+    },
+    "dragThreshold": {
+      "title": "拖拽阈值",
+      "description": "显示拖拽事件的最小像素距离"
+    }
+  },
+  "about": {
+    "title": "关于",
+    "upgrade": {
+      "title": "升级到专业版",
+      "description": "喜欢 Keyviz？支持其发展并解锁更多专业版功能",
+      "button": "获取专业版"
+    },
+    "updates": {
+      "title": "检查更新",
+      "available": "有可用更新",
+      "check": "检查",
+      "latest": "您正在使用最新版本",
+      "failed": "检查更新失败",
+      "newVersion": "发现新版本: v{{version}}"
+    },
+    "opensource": {
+      "title": "开源项目",
+      "description": "在 GitHub 上查看源码、赞助、收藏项目或参与开发"
+    },
+    "discord": {
+      "title": "Discord 社区",
+      "description": "加入我们的 Discord 社区"
+    }
+  }
+}

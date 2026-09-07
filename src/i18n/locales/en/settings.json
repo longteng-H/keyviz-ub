@@ -1,0 +1,227 @@
+{
+  "general": {
+    "title": "General",
+    "filter": {
+      "title": "Filter",
+      "description": {
+        "none": "No filter applied, all keys will be shown.",
+        "modifiers": "Only modifier keys will be shown.",
+        "custom": "Custom filter applied, {{count}} keys allowed."
+      },
+      "options": {
+        "none": "Off",
+        "modifiers": "Hotkeys",
+        "custom": "Custom"
+      }
+    },
+    "history": {
+      "title": "History",
+      "description": "Keep previously pressed keystrokes in the view",
+      "direction": {
+        "title": "Direction",
+        "row": "Row",
+        "column": "Column"
+      },
+      "maxCount": "Max Count"
+    },
+    "toggleShortcut": {
+      "title": "Toggle Shortcut",
+      "description": "Global shortcut to show/hide the key visualizer, click box to set",
+      "placeholder": "Click to set shortcut",
+      "recording": "Press your combination. Esc to cancel."
+    }
+  },
+  "appearance": {
+    "title": "Appearance",
+    "position": {
+      "title": "Position",
+      "display": {
+        "title": "Display",
+        "description": "Change monitor/display for the visualisation.",
+        "placeholder": "Select Display"
+      },
+      "alignment": {
+        "title": "Alignment",
+        "description": "Position of the key visualization on the screen"
+      },
+      "margin": {
+        "title": "Margin",
+        "description": "Space from the edge of the screen"
+      }
+    },
+    "animation": {
+      "title": "Animation",
+      "duration": {
+        "title": "Duration",
+        "description": "The duration keys stay on screen (in seconds)"
+      },
+      "type": {
+        "title": "Animation",
+        "options": {
+          "none": "None",
+          "fade": "Fade",
+          "zoom": "Zoom",
+          "float": "Float",
+          "slide": "Slide"
+        }
+      },
+      "speed": {
+        "title": "Animation Speed",
+        "description": "Higher the value, slower the animation"
+      }
+    }
+  },
+  "keycap": {
+    "title": "Keycap",
+    "preset": {
+      "title": "Preset",
+      "styles": {
+        "minimal": "Minimal",
+        "laptop": "Laptop",
+        "lowprofile": "Lowprofile",
+        "pbt": "PBT"
+      }
+    },
+    "sizePosition": {
+      "title": "Size & Position",
+      "scale": "Scale",
+      "scaleDescription": "Scale factor for keycap size (0.5 ~ 2.0)",
+      "offsetX": "Offset X",
+      "offsetY": "Offset Y",
+      "offsetDescription": "Pixel offset from default position (-200 ~ 200)",
+      "reset": "Reset Size & Position"
+    },
+    "text": {
+      "title": "Text",
+      "size": "Size",
+      "variant": {
+        "title": "Variant",
+        "placeholder": "text variant",
+        "options": {
+          "text": "Full Text",
+          "text-short": "Short Text",
+          "icon": "Icon Only"
+        }
+      },
+      "caps": "Text Cap",
+      "color": "Text Color",
+      "modifierColor": "Modifier Color"
+    },
+    "layout": {
+      "title": "Layout",
+      "icon": "Icon",
+      "alignment": "Alignment",
+      "symbol": {
+        "title": "Symbol",
+        "description": "Display symbol characters like !, @, #, etc."
+      },
+      "pressCount": {
+        "title": "Press Count",
+        "description": "Display the number of times a key has been pressed."
+      }
+    },
+    "color": {
+      "title": "Color",
+      "highlightModifier": {
+        "title": "Highlight Modifier",
+        "description": "Use different color for modifier keys"
+      },
+      "gradient": "Gradient",
+      "normal": "Normal",
+      "modifier": "Modifier",
+      "primary": "Primary",
+      "secondary": "Secondary"
+    },
+    "border": {
+      "title": "Border",
+      "enable": "Enable",
+      "width": "Width",
+      "color": "Color",
+      "modifierColor": "Modifier Color",
+      "radius": "Radius"
+    },
+    "background": {
+      "title": "Background",
+      "enable": "Enable",
+      "color": "Color"
+    },
+    "themes": {
+      "Silver": "Silver",
+      "Stone": "Stone",
+      "Lime": "Lime",
+      "Cyber": "Cyber",
+      "Turquoise": "Turquoise",
+      "Blue": "Blue",
+      "Yellow": "Yellow",
+      "Green": "Green",
+      "Pink": "Pink",
+      "Red": "Red",
+      "Pansy": "Pansy",
+      "Eclipse": "Eclipse",
+      "Bumblebee": "Bumblebee",
+      "Charcoal": "Charcoal"
+    }
+  },
+  "mouse": {
+    "title": "Mouse",
+    "cursorHighlight": {
+      "title": "Cursor Highlight"
+    },
+    "showClicks": {
+      "title": "Show Clicks",
+      "description": "Animate a ring upon mouse press"
+    },
+    "size": "Size",
+    "color": "Color",
+    "alwaysHighlight": {
+      "title": "Always Highlight",
+      "description": "Permanently show the ring around the cursor"
+    },
+    "buttonIndicator": {
+      "title": "Button Indicator"
+    },
+    "showIndicator": {
+      "title": "Show Indicator",
+      "description": "Display button and scroll icons next to the cursor"
+    },
+    "keepIndicator": {
+      "title": "Keep Indicator",
+      "description": "Permanently show the icon beside the cursor"
+    },
+    "offset": {
+      "title": "Offset",
+      "description": "Space from the cursor to the indicator"
+    },
+    "event": {
+      "title": "Event"
+    },
+    "dragThreshold": {
+      "title": "Drag Threshold",
+      "description": "Minimum distance in pixels to show Drag event"
+    }
+  },
+  "about": {
+    "title": "About",
+    "upgrade": {
+      "title": "Upgrade to Pro",
+      "description": "Love Keyviz? Support its growth and unlock more with Pro.",
+      "button": "Go Pro"
+    },
+    "updates": {
+      "title": "Check for updates",
+      "available": "Update Available",
+      "check": "Check",
+      "latest": "You are using the latest version.",
+      "failed": "Failed to check for updates.",
+      "newVersion": "New version available: v{{version}}"
+    },
+    "opensource": {
+      "title": "Open Source",
+      "description": "Review the source code on GitHub, sponsor, star the project, or contribute to its development."
+    },
+    "discord": {
+      "title": "Discord",
+      "description": "Join our Discord community."
+    }
+  }
+}

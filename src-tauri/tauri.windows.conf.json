@@ -1,0 +1,28 @@
+{
+    "app": {
+        "windows": [
+            {
+                "label": "main",
+                "title": "Keyviz",
+                "alwaysOnTop": true,
+                "skipTaskbar": true,
+                "decorations": true,
+                "titleBarStyle": "Overlay",
+                "hiddenTitle": true,
+                "transparent": true,
+                "focus": false,
+                "focusable": false,
+                "fullscreen": true,
+                "visible": false
+            }
+        ]
+    },
+    "bundle": {
+        "windows": {
+            "wix": {
+                "dialogImagePath": "./wix/dialog-image.png",
+                "bannerPath": "./wix/banner.png"
+            }
+        }
+    }
+}

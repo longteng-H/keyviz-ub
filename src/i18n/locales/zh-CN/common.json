@@ -1,0 +1,38 @@
+{
+  "app": {
+    "name": "Keyviz"
+  },
+  "sidebar": {
+    "general": "通用",
+    "appearance": "外观",
+    "keycap": "按键",
+    "mouse": "鼠标",
+    "about": "关于"
+  },
+  "actions": {
+    "import": "导入",
+    "export": "导出",
+    "check": "检查",
+    "save": "保存",
+    "cancel": "取消",
+    "confirm": "确认"
+  },
+  "toast": {
+    "importSuccess": "导入成功",
+    "importError": "导入文件错误",
+    "exportSuccess": "导出成功",
+    "exportError": "导出文件错误",
+    "invalidFormat": "无效的文件格式",
+    "updateAvailable": "发现新版本: v{{version}}",
+    "updateView": "查看",
+    "latestVersion": "您正在使用最新版本",
+    "checkUpdateFailed": "检查更新失败"
+  },
+  "tray": {
+    "stop": "停止",
+    "start": "开始",
+    "settings": "设置",
+    "quit": "退出"
+  },
+  "loading": "加载中..."
+}

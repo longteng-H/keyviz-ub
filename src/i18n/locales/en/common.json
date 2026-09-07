@@ -1,0 +1,38 @@
+{
+  "app": {
+    "name": "Keyviz"
+  },
+  "sidebar": {
+    "general": "General",
+    "appearance": "Appearance",
+    "keycap": "Keycap",
+    "mouse": "Mouse",
+    "about": "About"
+  },
+  "actions": {
+    "import": "Import",
+    "export": "Export",
+    "check": "Check",
+    "save": "Save",
+    "cancel": "Cancel",
+    "confirm": "Confirm"
+  },
+  "toast": {
+    "importSuccess": "Imported successfully",
+    "importError": "Error importing file",
+    "exportSuccess": "Exported successfully",
+    "exportError": "Error exporting file",
+    "invalidFormat": "Invalid file format",
+    "updateAvailable": "New version available: v{{version}}",
+    "updateView": "View",
+    "latestVersion": "You are using the latest version.",
+    "checkUpdateFailed": "Failed to check for updates."
+  },
+  "tray": {
+    "stop": "Stop",
+    "start": "Start",
+    "settings": "Settings",
+    "quit": "Quit"
+  },
+  "loading": "Loading..."
+}
