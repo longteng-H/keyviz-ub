@@ -2,10 +2,10 @@
   <img src="public/logo.svg" alt="Keyviz-UB" width="120">
 </p>
 
-<h1 align="center">Keyviz-UB</h1>
+<h1 align="center">keyviz-UserBuild</h1>
 
 <p align="center">
-  <strong>UB = UserBuild · 基于 <a href="https://github.com/mulaRahul/keyviz">Keyviz</a> v2.1.1 的用户定制版本</strong>
+  <strong>基于 <a href="https://github.com/mulaRahul/keyviz">Keyviz</a> v2.1.1 的用户更新版本</strong>
 </p>
 
 <p align="center">
@@ -24,7 +24,7 @@
 
 ## 中文
 
-> **声明：** UB = UserBuild（用户定制版）。本项目基于 [mulaRahul/keyviz](https://github.com/mulaRahul/keyviz)（GPL-3.0 许可证）进行修改和扩展。上游项目的所有原始代码版权归 Rahul Mula 及其贡献者所有。
+> **声明：** 本项目为 **keyviz-UserBuild**（用户更新版），基于 [mulaRahul/keyviz](https://github.com/mulaRahul/keyviz)（GPL-3.0 许可证）进行修改和扩展。上游项目的所有原始代码版权归 Rahul Mula 及其贡献者所有。
 
 ### ✨ 新增功能
 
@@ -55,7 +55,7 @@
 
 | 项目 | 值 |
 |------|-----|
-| 产品名称 | Keyviz-UB |
+| 产品名称 | keyviz-UserBuild |
 | 版本 | v0.0.1 |
 | 基于 | Keyviz v2.1.1 |
 | 技术栈 | Tauri v2 + React 19 + TypeScript + Vite |
@@ -85,7 +85,7 @@ npm run tauri build
 
 ## English
 
-> **Disclaimer:** UB = UserBuild. This project is modified and extended from [mulaRahul/keyviz](https://github.com/mulaRahul/keyviz) (GPL-3.0 License). All original code copyrights belong to Rahul Mula and its contributors.
+> **Disclaimer:** This is **keyviz-UserBuild** — a user-updated version based on [mulaRahul/keyviz](https://github.com/mulaRahul/keyviz) (GPL-3.0 License). All original code copyrights belong to Rahul Mula and its contributors.
 
 ### ✨ Additions
 
@@ -116,7 +116,7 @@ npm run tauri build
 
 | Item | Value |
 |------|-------|
-| Product | Keyviz-UB |
+| Product | keyviz-UserBuild |
 | Version | v0.0.1 |
 | Based on | Keyviz v2.1.1 |
 | Stack | Tauri v2 + React 19 + TypeScript + Vite |
