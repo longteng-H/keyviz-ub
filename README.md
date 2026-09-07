@@ -1,180 +1,141 @@
 # Keyviz-UB
 
-> **基于 [Keyviz](https://github.com/mulaRahul/keyviz) v2.1.1 的修改版本**
->
-> **A modified version based on [Keyviz](https://github.com/mulaRahul/keyviz) v2.1.1**
+> Based on [Keyviz](https://github.com/mulaRahul/keyviz) v2.1.1
+
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+[![Tauri](https://img.shields.io/badge/Tauri-v2-blue.svg)](https://v2.tauri.app/)
+[![React](https://img.shields.io/badge/React-19-61DAFB.svg)](https://react.dev/)
+
+**[English](#english) | [中文](#中文)**
 
 ---
 
-## 声明 / Disclaimer
+<details open id="english">
+<summary><h2>English</h2></summary>
 
-本项目基于 [mulaRahul/keyviz](https://github.com/mulaRahul/keyviz)（GPL-3.0 许可证）进行修改和扩展。上游项目的所有原始代码版权归 Rahul Mula 及其贡献者所有。
+### Disclaimer
 
 This project is modified and extended from [mulaRahul/keyviz](https://github.com/mulaRahul/keyviz) (GPL-3.0 License). All original code copyrights belong to Rahul Mula and its contributors.
 
-我们对上游项目的修改、新增和优化项如下：
+### Modifications
 
-The following sections describe our modifications, additions, and optimizations to the upstream project.
+1. **Rust toggle shortcut key name fix** (`state.rs`) — Default key changed from `"Shift"` to `"ShiftLeft"` to match TypeScript side.
 
----
+2. **tick() race condition fix** (`key_event.ts`) — Fixed stale snapshot causing keys to linger when `onKeyRelease` fires during `tick()`.
 
-## 修改项 / Modifications
+3. **Replace mode re-render fix** (`key_event.ts`) — `push()` now creates new array references so Zustand detects changes.
 
-### 1. Rust 侧 Toggle 快捷键 Key Name 修复
-**文件**: `src-tauri/src/app/state.rs`
+4. **onMouseMove mutation fix** (`key_event.ts`) — Spread operator used to avoid direct array mutation.
 
-上游 Rust 代码中 `toggle_shortcut` 默认值为 `["Shift", "F10"]`，而 TypeScript 侧使用 `["ShiftLeft", "F10"]`，导致首次安装时快捷键切换功能可能失效。已修复为一致的 `"ShiftLeft"`。
+5. **scroll linger consistency fix** (`key_event.ts`) — Unified to use `get()` for live state reads.
 
-The upstream Rust code used `"Shift"` as the default toggle shortcut key name, while the TypeScript side uses `"ShiftLeft"`, causing the toggle shortcut to potentially fail on first install. Fixed to use consistent `"ShiftLeft"`.
+### Additions
 
-### 2. 按键显示竞态条件修复
-**文件**: `src/stores/key_event.ts` - `tick()` 函数
+1. **Full i18n** — English + Simplified Chinese via `react-i18next`, including settings UI and Rust tray menu.
 
-`tick()` 在过滤按键时使用了快照 `state.pressedKeys`，但如果 `onKeyRelease` 在 `tick()` 执行期间被处理，会使用过期的快照导致按键延迟消失。修复为每次过滤时重新读取最新的 `pressedKeys`。
+2. **Key zoom/offset** — CSS `transform` based scale and offset controls for key overlay.
 
-The `tick()` function used a snapshot `state.pressedKeys` when filtering keys, but if `onKeyRelease` was processed during `tick()` execution, the stale snapshot would cause keys to linger longer than expected. Fixed to re-read the latest `pressedKeys` on each filter evaluation.
+3. **Key style settings UI** — Scale, offsetX, offsetY adjustment controls.
 
-### 3. Replace 模式按键不触发 Re-render 修复
-**文件**: `src/stores/key_event.ts` - `onKeyPress()` 函数
+### Optimizations
 
-Replace 模式下 `groups[last].keys.push(key)` 直接变异数组，Zustand 检测不到变化导致 React 不 re-render，按键不显示。修复为创建新数组引用。
+1. **Atomic event processing** — Single Mutex lock in Rust event handler.
 
-In replace mode, `groups[last].keys.push(key)` directly mutated the array, which Zustand couldn't detect, preventing React from re-rendering and causing keys to not display. Fixed to create new array references.
+2. **Order-insensitive toggle** — Sorted shortcut comparison.
 
-### 4. onMouseMove 直接变异修复
-**文件**: `src/stores/key_event.ts` - `onMouseMove()` 函数
+3. **Localized key names** — `getKeyDisplayData()` function for i18n support.
 
-`groups[last].keys = groups[last].keys.filter(...)` 直接变异了 keys 数组。修复为使用 spread 创建新对象。
+4. **Error handling** — `emit().unwrap()` replaced with `let _ = emit()`.
 
-`groups[last].keys = groups[last].keys.filter(...)` directly mutated the keys array. Fixed to create a new object using spread.
+### Version Info
 
-### 5. tick() scroll linger 一致性修复
-**文件**: `src/stores/key_event.ts` - `tick()` 函数
+| Item | Value |
+|------|-------|
+| Product | Keyviz-UB |
+| Version | v0.0.1 |
+| Based on | Keyviz v2.1.1 |
+| License | GPL-3.0 |
+| Stack | Tauri v2 + React 19 + TypeScript + Vite |
 
-scroll linger 部分使用快照 `state.pressedKeys`，而 key linger 使用 `get().pressedKeys`（实时值），行为不一致。统一为使用 `get()` 读取最新状态。
+### Build
 
-The scroll linger section used a snapshot `state.pressedKeys` while the key linger section used `get().pressedKeys` (live value), causing inconsistent behavior. Unified to use `get()` for reading the latest state.
+```bash
+npm install
+npm run tauri dev    # Development
+npm run tauri build  # Production
+```
 
----
+Build artifacts: `src-tauri/target/release/bundle/`
 
-## 新增项 / Additions
+### Credits
 
-### 1. 国际化 (i18n)
-**目录**: `src/i18n/`
+- Upstream: [mulaRahul/keyviz](https://github.com/mulaRahul/keyviz)
+- Author: [Rahul Mula](https://github.com/mulaRahul)
 
-- 使用 `react-i18next` 实现完整国际化
-- 支持语言：英文 (en)、简体中文 (zh-CN)
-- 命名空间：`common`、`settings`、`keys`
-- 语言切换组件：`LanguageToggle`
-- 设置界面全部翻译
-- Rust 侧托盘菜单本地化
-
-Full internationalization using `react-i18next`. Supports English and Simplified Chinese. Includes settings UI translation and Rust tray menu localization.
-
-### 2. 按键缩放/偏移功能
-**文件**: `src/lib/key-style.ts`, `src/components/key-overlay.tsx`
-
-新增 CSS `transform: translate(offsetX, offsetY) scale(scale)` 方式实现的按键显示区域缩放和偏移控制，不影响现有组件样式。
-
-Added key overlay zoom and offset control using CSS `transform: translate(offsetX, offsetY) scale(scale)`, without affecting existing component styles.
-
-### 3. 按键样式缩放设置
-**文件**: `src/components/keycap.tsx`
-
-在设置界面中新增按键缩放比例 (scale)、X 偏移 (offsetX)、Y 偏移 (offsetY) 的调节控件。
-
-Added UI controls for key scale, offsetX, and offsetY settings in the settings panel.
+</details>
 
 ---
 
-## 优化项 / Optimizations
+<details id="zh">
+<summary><h2>中文</h2></summary>
 
-### 1. Rust 侧事件处理原子性优化
-**文件**: `src-tauri/src/app/event.rs`
+### 声明
 
-将 Rust 侧的两个独立 Mutex lock acquisition 合并为单次锁获取，确保事件处理的原子性。
+本项目基于 [mulaRahul/keyviz](https://github.com/mulaRahul/keyviz)（GPL-3.0 许可证）进行修改和扩展。上游项目的所有原始代码版权归 Rahul Mula 及其贡献者所有。
 
-Merged two separate Mutex lock acquisitions into a single lock acquisition for atomic event processing.
+### 修改项
 
-### 2. Toggle 快捷键比较优化
-**文件**: `src-tauri/src/app/event.rs`
+1. **Rust 侧 Toggle 快捷键 Key Name 修复** (`state.rs`) — 默认值从 `"Shift"` 改为 `"ShiftLeft"`，与 TypeScript 侧保持一致。
 
-Toggle 快捷键比较改为排序后比较（order-insensitive），避免因按键顺序不同导致匹配失败。
+2. **tick() 竞态条件修复** (`key_event.ts`) — 修复 `onKeyRelease` 在 `tick()` 执行期间触发时，过期快照导致按键延迟消失的问题。
 
-Toggle shortcut comparison changed to sorted comparison (order-insensitive) to prevent matching failures due to different key orderings.
+3. **Replace 模式 re-render 修复** (`key_event.ts`) — `push()` 现在创建新数组引用，使 Zustand 能检测到变化。
 
-### 3. 按键显示名称 i18n 支持
-**文件**: `src/lib/keymaps.ts`
+4. **onMouseMove 变异修复** (`key_event.ts`) — 使用 spread 避免直接变异数组。
 
-新增 `getKeyDisplayData()` 函数，支持按键显示名称的国际化本地化，替代直接访问 `keymaps` 对象。
+5. **scroll linger 一致性修复** (`key_event.ts`) — 统一使用 `get()` 读取最新状态。
 
-Added `getKeyDisplayData()` function for localized key display names, replacing direct access to the `keymaps` object.
+### 新增项
 
-### 4. 错误处理改进
-**文件**: `src-tauri/src/app/event.rs`
+1. **完整国际化** — 使用 `react-i18next` 支持英文和简体中文，包括设置界面和 Rust 托盘菜单。
 
-将 `app_handle.emit().unwrap()` 改为 `let _ = app_handle.emit()`，避免 emit 失败时 panic。
+2. **按键缩放/偏移** — 基于 CSS `transform` 的按键显示区域缩放和偏移控制。
 
-Changed `app_handle.emit().unwrap()` to `let _ = app_handle.emit()` to prevent panics on emit failure.
+3. **按键样式设置 UI** — 缩放比例、X 偏移、Y 偏移调节控件。
 
----
+### 优化项
 
-## 版本信息 / Version Info
+1. **事件处理原子性** — Rust 侧单次 Mutex 锁获取。
+
+2. **Toggle 快捷键顺序无关** — 排序后比较。
+
+3. **按键名称国际化** — `getKeyDisplayData()` 函数支持本地化。
+
+4. **错误处理** — `emit().unwrap()` 改为 `let _ = emit()`。
+
+### 版本信息
 
 | 项目 | 值 |
 |------|-----|
 | 产品名称 | Keyviz-UB |
 | 版本 | v0.0.1 |
 | 基于 | Keyviz v2.1.1 |
-| 上游仓库 | https://github.com/mulaRahul/keyviz |
 | 许可证 | GPL-3.0 |
-| 技术栈 | Tauri v2 (Rust) + React 19 + TypeScript + Vite |
+| 技术栈 | Tauri v2 + React 19 + TypeScript + Vite |
 
----
-
-## 构建 / Build
-
-### 环境要求 / Requirements
-
-- [Node.js](https://nodejs.org/) (v18+)
-- [Rust](https://www.rust-lang.org/tools/install) (stable)
-- [Tauri CLI](https://v2.tauri.app/start/prerequisites/)
-
-### 构建步骤 / Build Steps
+### 构建
 
 ```bash
-# 安装依赖
 npm install
-
-# 开发模式
-npm run tauri dev
-
-# 生产构建
-npm run tauri build
+npm run tauri dev    # 开发模式
+npm run tauri build  # 生产构建
 ```
 
-### Windows 构建注意事项 / Windows Build Notes
+构建产物位于 `src-tauri/target/release/bundle/`
 
-Rust 需要安装在非默认路径时，需要设置环境变量：
-
-When Rust is installed at a non-default path, set environment variables:
-
-```powershell
-$env:RUSTUP_HOME="D:\Rust\rustup"
-$env:CARGO_HOME="D:\Rust\cargo"
-$env:PATH="D:\Rust\cargo\bin;D:\Rust\rustup\bin;" + $env:PATH
-$env:HTTP_PROXY=""
-$env:HTTPS_PROXY=""
-```
-
-构建产物位于 `src-tauri/target/release/bundle/`。
-
-Build artifacts are located at `src-tauri/target/release/bundle/`.
-
----
-
-## 致谢 / Credits
+### 致谢
 
 - 原始项目：[mulaRahul/keyviz](https://github.com/mulaRahul/keyviz)
 - 原作者：[Rahul Mula](https://github.com/mulaRahul)
-- 许可证：GPL-3.0
+
+</details>
