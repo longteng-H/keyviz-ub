@@ -5,7 +5,7 @@
 <h1 align="center">Keyviz-UB</h1>
 
 <p align="center">
-  <strong>基于 <a href="https://github.com/mulaRahul/keyviz">Keyviz</a> v2.1.1 的增强版本</strong>
+  <strong>UB = UserBuild · 基于 <a href="https://github.com/mulaRahul/keyviz">Keyviz</a> v2.1.1 的用户定制版本</strong>
 </p>
 
 <p align="center">
@@ -24,7 +24,7 @@
 
 ## 中文
 
-> **声明：** 本项目基于 [mulaRahul/keyviz](https://github.com/mulaRahul/keyviz)（GPL-3.0 许可证）进行修改和扩展。上游项目的所有原始代码版权归 Rahul Mula 及其贡献者所有。
+> **声明：** UB = UserBuild（用户定制版）。本项目基于 [mulaRahul/keyviz](https://github.com/mulaRahul/keyviz)（GPL-3.0 许可证）进行修改和扩展。上游项目的所有原始代码版权归 Rahul Mula 及其贡献者所有。
 
 ### ✨ 新增功能
 
@@ -85,7 +85,7 @@ npm run tauri build
 
 ## English
 
-> **Disclaimer:** This project is modified and extended from [mulaRahul/keyviz](https://github.com/mulaRahul/keyviz) (GPL-3.0 License). All original code copyrights belong to Rahul Mula and its contributors.
+> **Disclaimer:** UB = UserBuild. This project is modified and extended from [mulaRahul/keyviz](https://github.com/mulaRahul/keyviz) (GPL-3.0 License). All original code copyrights belong to Rahul Mula and its contributors.
 
 ### ✨ Additions
 
